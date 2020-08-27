@@ -1,0 +1,190 @@
+input[type="file"] {
+    display: none;
+}
+
+body {
+  background-color: #eee;
+}
+
+#CustomUpload {
+  width: 20%;
+  margin-bottom: 10px;
+  font-size: 2.3rem;
+  padding: 5px 30px 5px 30px;
+  border-radius: 25px;
+  border: 2px solid black;
+  background-color: gray;
+}
+
+#CustomUpload:hover {
+  box-shadow: green 1px 0 10px;
+  background-color: #888;
+  transition: all 0.3s ease-in-out;
+}
+
+#info {
+  font-size: 2rem;
+}
+
+#container {
+  border: 1px solid black;
+  border-radius: 5px;
+}
+
+input[type=text], button, textarea {
+  font-size: 1.5rem;
+  resize: none;
+  overflow: hidden;
+  border: none;
+  background-color: #110110;
+  color: #AAAAAA;
+  border: 5px solid #1E0146;
+  box-sizing: border-box;
+  transition: height 0s;
+  font-family: 'minecraftfont', 'Roboto', sans-serif;
+  outline: none;
+}
+
+input[type=text]:hover, textarea:hover {
+  box-shadow: green 1px 0 10px;
+  transition: height 0s;
+}
+
+input[type=text]:focus, button:hover, textarea:focus {
+  transition: all 0.3s ease-in-out;
+  outline: none;
+  border: none;
+  transition: height 0s;
+}
+
+.collapsible-content {
+  display: none;
+  transition: height 0.3s ease;
+  box-shadow: black 1px 1px 15px;
+  border-radius: 5px;
+  margin-bottom: 15px;
+  padding: 10px 10px 10px 10px;
+}
+
+.collapsible {
+  cursor: pointer;
+  border-radius: 5px;
+}
+.collapsible:hover {
+  background-color: #bbb;
+}
+.collapsible {
+  font-size: 2.2rem;
+  background-color: #ccc;
+}
+
+.deleteButton {
+  transition-duration: 0.4s;
+  background-color: red;
+  color: white;
+  border: none;
+}
+.deleteButton:hover {
+  background-color: darkred;
+  color: white;
+  box-shadow: red 1px 0 10px;
+}
+.deleteButton:active {
+  box-shadow: darkred 1px 0 10px;
+}
+
+#addButton {
+  transition-duration: 0.4s;
+  background-color: green;
+  color: white;
+  border: none;
+}
+#addButton:hover {
+  background-color: darkgreen;
+  color: white;
+  box-shadow: green 1px 0 10px;
+}
+#addButton:active {
+  box-shadow: darkgreen 1px 0 10px;
+}
+
+#saveButton {
+  margin: 10px 10px 10px 0;
+  transition-duration: 0.4s;
+  background-color: #2a73e8;
+  color: white;
+  border: none;
+}
+#saveButton:hover {
+  background-color: darkblue;
+  color: white;
+  box-shadow: #2a73e8 1px 0 10px;
+}
+#saveButton:active {
+  box-shadow: darkblue 1px 0 10px;
+}
+
+
+.skin {
+  perspective: 1000px;
+  perspective-origin: 50% 0;
+  height: 235px;
+  width: 250px;
+  position: relative;
+}
+
+.innerCube {
+  margin-top: 20px;
+  margin-left: 40px;
+  width: 170px;
+  height: 170px;
+  position: absolute;
+  transform-style: preserve-3d;
+  animation: spin 20s linear infinite;
+}
+
+.innerCube .front, .innerCube .back, .innerCube .right, .innerCube .left, .innerCube .top, .innerCube .bottom {
+  width: 160px;
+  height: 160px;
+  background-size: 1280px 1280px;
+  top: 5px;
+  left: 5px;
+}
+
+.innerCube .hatFront, .innerCube .hatBack, .innerCube .hatRight, .innerCube .hatLeft, .innerCube .hatTop, .innerCube .hatBottom {
+  width: 170px;
+  height: 170px;
+  background-size: 1360px 1360px;
+}
+
+.innerCube .front, .innerCube .back, .innerCube .right, .innerCube .left, .innerCube .top, .innerCube .bottom,
+.innerCube .hatFront, .innerCube .hatBack, .innerCube .hatRight, .innerCube .hatLeft, .innerCube .hatTop, .innerCube .hatBottom {
+  position: absolute;
+  background-image: url('http://textures.minecraft.net/texture/b732c4aeb233f9e6cf332221e2f3611958c11583e3644038483ef49c11a648');
+  background-repeat: no-repeat;
+  image-rendering: -moz-crisp-edges;
+  image-rendering: -o-crisp-edges;
+  image-rendering: -webkit-optimize-contrast;
+  -ms-interpolation-mode: nearest-neighbor;
+  image-rendering: pixelated;
+}
+
+.innerCube .front  { transform: rotateY(   0deg ) translateZ( 80px ); background-position: -160px -160px; }
+.innerCube .back   { transform: rotateY( 180deg ) translateZ( 80px ); background-position: -480px -160px; }
+.innerCube .right  { transform: rotateY(  90deg ) translateZ( 80px ); background-position: -320px -160px; }
+.innerCube .left   { transform: rotateY( -90deg ) translateZ( 80px ); background-position: 0px -160px; }
+.innerCube .top    { transform: rotateX(  90deg ) translateZ( 80px ); background-position: -160px 0px; }
+.innerCube .bottom { transform: rotateX( -90deg ) translateZ( 80px ); background-position: -320px 0px; }
+
+.innerCube .hatFront  { transform: rotateY(   0deg ) translateZ( 85px ); background-position: -850px -170px; }
+.innerCube .hatBack   { transform: rotateY( 180deg ) translateZ( 85px ); background-position: -1190px -170px; }
+.innerCube .hatRight  { transform: rotateY(  90deg ) translateZ( 85px ); background-position: -1020px -170px; }
+.innerCube .hatLeft   { transform: rotateY( -90deg ) translateZ( 85px ); background-position: -680px -170px; }
+.innerCube .hatTop    { transform: rotateX(  90deg ) translateZ( 85px ); background-position: -850px 0px; }
+.innerCube .hatBottom { transform: rotateX( -90deg ) translateZ( 85px ); background-position: -1020px 0px; }
+
+
+@keyframes spin {
+  from { transform: rotateY(0deg); }
+  to { transform: rotateY(360deg); }
+}
