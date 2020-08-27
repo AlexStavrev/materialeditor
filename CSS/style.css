@@ -93,18 +93,18 @@ input[type=text]:focus, button:hover, textarea:focus {
   box-shadow: darkred 1px 0 10px;
 }
 
-#addButton {
+.addButton {
   transition-duration: 0.4s;
   background-color: green;
   color: white;
   border: none;
 }
-#addButton:hover {
+.addButton:hover {
   background-color: darkgreen;
   color: white;
   box-shadow: green 1px 0 10px;
 }
-#addButton:active {
+.addButton:active {
   box-shadow: darkgreen 1px 0 10px;
 }
 

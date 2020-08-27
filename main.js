@@ -14,12 +14,11 @@ var blank = {
   model: 0
 };
 
-
-window.onbeforeunload = function(e) {
+window.onbeforeunload = function(e) { //Leave comfirm
   return 'Are you sure you want to leave? You are in the middle of something.';
 };
 
-//SELECT FILE
+//SELECT A FILE
 function showFile(input) {
   let file = input.files[0];
   let reader = new FileReader();
@@ -27,9 +26,8 @@ function showFile(input) {
 
   reader.onload = function() {
       materials = JSON.parse(reader.result);
-
       for(var i = 0; i < materials.length; i++) {
-          addNewItem(materials[i], false);
+          addNewItem(materials[i], false); //Add all new items (false as it's not blank)
       }
   };
   reader.onerror = function() {
@@ -58,7 +56,7 @@ function addNewItem(item, isNew) {
   collapsibleBox.appendChild(newEditBox);
   container.appendChild(newItemBox);
 
-  //Element classes
+  //Add Element classes
   title.classList.add("collapsible");
   deleteButton.classList.add("deleteButton");
   collapsibleBox.classList.add("collapsible-content");
@@ -68,7 +66,7 @@ function addNewItem(item, isNew) {
 
 
   //Event listeners
-  newEditBox.onkeydown = function(e){
+  newEditBox.onkeydown = function(e){ //For TAB in textareas
           if(e.keyCode==9 || e.which==9){
               e.preventDefault();
               var s = this.selectionStart;
@@ -77,7 +75,7 @@ function addNewItem(item, isNew) {
           }
       }
 
-  deleteButton.addEventListener("click", function() {
+  deleteButton.addEventListener("click", function() { //For deleting an item
     var result = confirm('Are you sure you want to\ndelete ' + '"' + item.name + '"?');
     if (result) {
         var element = this.parentElement.parentElement;
@@ -85,14 +83,14 @@ function addNewItem(item, isNew) {
     }
   });
 
-  newEditBox.addEventListener("blur", function() {
+  newEditBox.addEventListener("blur", function() { //For when you end editing a textarea
     auto_grow(this);
 
     window.onbeforeunload = function(e) {
       return 'Are you sure you want to leave? You are in the middle of something.';
     };
 
-    var editedItem = JSON.parse(this.value);
+    var editedItem = JSON.parse(this.value); //Change the head skin and the item name
     var headSides = this.parentElement.getElementsByClassName('customHead');
     if (editedItem != null) {
       var editedTitle = this.parentElement.parentElement.getElementsByTagName("p")[0];
@@ -156,14 +154,14 @@ function loadFromClipboard() {
     textarea.addEventListener("input", function() {
       try {
         var items = JSON.parse(this.value);
-        console.log(items);
         this.remove();
-        if (items.length != 0) {
-          for(var i = 0; i < items.length; i++) {
-            addNewItem(items[i], false);
-          }
+        if (items.length == null) {
+          addNewItem(items, false);
+          return;
         }
-        else alert("Clipboard was empty or not a JSON!");
+        for(var i = 0; i <= items.length; i++) {
+          addNewItem(items[i], false);
+        }
       } catch (e) {
         this.value = "";
         alert("Clipboard was empty or not a JSON!");
