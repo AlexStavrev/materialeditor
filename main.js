@@ -143,6 +143,7 @@ function addNewItem(item, isNew) {
 
   if (isNew) {
     title.click();
+    title.scrollIntoView();
   }
 }
 
