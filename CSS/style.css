@@ -27,8 +27,9 @@ body {
 }
 
 #container {
-  border: 1px solid black;
-  border-radius: 5px;
+  /* border: 1px solid black;
+  border-radius: 5px; */
+  background-color: pink;
 }
 
 input[type=text], button, textarea {
@@ -125,6 +126,7 @@ input[type=text]:focus, button:hover, textarea:focus {
 }
 
 
+/* Rotating Item*/
 .skin {
   perspective: 1000px;
   perspective-origin: 50% 0;
