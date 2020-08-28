@@ -42,12 +42,14 @@ function addNewItem(item, isNew) {
   var newItemBox = document.createElement("div");
   var collapsibleBox = document.createElement("div");
   var newEditBox = document.createElement("textarea");
+  var skinsLink = document.createElement("a");
   var deleteButton = document.createElement("button");
   var container = document.getElementById("container");
 
   //Element value setting
   title.appendChild(document.createTextNode(item.name + " ▼"));
   newEditBox.appendChild(document.createTextNode(JSON.stringify(item, null,'\t')));
+  skinsLink.appendChild(document.createTextNode("https://minecraft-heads.com/custom-heads"))
   deleteButton.appendChild(document.createTextNode("  ❌  "));
 
   //Element pattern
@@ -139,6 +141,7 @@ function addNewItem(item, isNew) {
   }
 
   collapsibleBox.appendChild(skin);
+  collapsibleBox.appendChild(skinsLink);
   collapsibleBox.appendChild(deleteButton);
 
   if (isNew) {
