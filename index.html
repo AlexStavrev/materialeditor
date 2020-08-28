@@ -7,23 +7,26 @@
   <link rel="stylesheet" href="CSS/style.css">
   <title>List Visualiser</title>
 </head>
-<body>
 
+<body>
   <nav>
+
     <a id="logo" href="index.html">
-      <img src="images/logo.png" alt="LOGO">
+      <img src="https://avatars0.githubusercontent.com/u/40688355?s=460&v=4" alt="LOGO">
     </a>
-    <button class="collapsible addButton float-right" type="button">(❔) Info</button>
+
+    <span id="splash" >Wrex' Minecraft material editor</span>
+
+    <button id="infoButton" class="collapsible addButton" type="button">(❔) HELP</button>
     <div class="collapsible-content" style="display: none;">
       <p id="info"><b>"Upload a list"</b> - select a json file from your PC. If the format is not right nothing will happen.
         <br><b>"Upload a list from clipboard"</b>: paste the copied text in the newly generated textarea. You can also use this to add a bunch of new elements to an already existing list.
         <br><b>"Add new element"</b>: add 1 new element at the end of the list. You can open and edit an element by clicking on the name. A dropdown box with a preview and edit box will pop up. You can edit the values in the edit box and they will automatially apply.
-        <br><b>"X"</b>: Delete button used to remove single element.<br><b>"Save"</b>: download a new materials.json from your list.</p>
+        <br><b>"X"</b>: Delete button used to remove single element.<br><b>"Save"</b>: download a new materials.json made from your list.</p>
       </div>
     </nav>
 
     <div class="container">
-
       <label class="custom-file-upload">
         <input type="file" onchange="showFile(this)">
         <p id="CustomUpload">Upload a list!</p>
@@ -39,13 +42,11 @@
 
         <button id="saveButton" type="button" onclick="saveFile()"> ✔ Save </button>
         <br/>
-
       </div>
 
       <footer>
         &copy Le Duo Patatas
       </footer>
-
     </body>
 
     <script type="text/javascript" src="main.js"></script>

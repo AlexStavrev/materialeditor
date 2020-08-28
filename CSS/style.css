@@ -10,6 +10,61 @@ a {
   text-decoration: none;
 }
 
+nav {
+  box-shadow: 1px 3px 20px 1px black;
+  margin-bottom: 30px;
+}
+
+#logo img {
+  width: 80px;
+  margin: 8px 0 0 8px;
+  border-radius: 50%;
+}
+
+#splash {
+  margin-left: 10px;
+  animation: type 3s;
+  animation-delay: 1s;
+  animation-fill-mode: forwards;
+  display: inline-block;
+  overflow: hidden;
+  white-space: nowrap;
+  width: 0;
+  font-size: 2rem;
+}
+
+@keyframes type {
+  0% {
+    width: 0ch;
+    border-right: 2px solid black;
+  }
+  80%{
+    border-right: 2px solid black;
+    border-right: 2px solid rgba(0, 0, 0, 0.63);
+  }
+  90%{
+    border-right: 2px solid black;
+    border-right: 2px solid rgba(0, 0, 0, 0.83);
+  }
+  100% {
+    width: 24.7ch;
+    border-right: 2px solid black;
+    border-right: 2px solid rgba(255, 0, 0, 0);
+    -webkit-background-clip: padding-box;
+    background-clip: padding-box;
+  }
+}
+
+#infoButton {
+  float: right;
+  margin-right: 10px;
+  border-radius: 0 0 10px 10px;
+}
+
+footer {
+  background-color: blue;
+}
+
 #CustomUpload {
   width: 20%;
   margin-bottom: 10px;
@@ -31,9 +86,8 @@ a {
 }
 
 #container {
-  /* border: 1px solid black; */
+  border: 1px solid black;
   border-radius: 5px;
-  background-color: pink;
 }
 
 input[type=text], button, textarea {
