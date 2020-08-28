@@ -6,6 +6,10 @@ body {
   background-color: #eee;
 }
 
+a {
+  text-decoration: none;
+}
+
 #CustomUpload {
   width: 20%;
   margin-bottom: 10px;
