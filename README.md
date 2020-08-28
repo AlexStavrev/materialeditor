@@ -1,4 +1,4 @@
-# materialeditor
-A Minecraft materials visualiser and editor for Kenzzie's World network.
+# Material Editor
+A Minecraft materials list visualiser and editor for Kenzzie's World network.
 
-Feed us cookies.
+Concept and implementation by WrexBG.
