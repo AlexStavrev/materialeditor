@@ -6,6 +6,10 @@ body {
   background-color: #eee;
 }
 
+a {
+  text-decoration: none;
+}
+
 #CustomUpload {
   width: 20%;
   margin-bottom: 10px;
@@ -27,8 +31,8 @@ body {
 }
 
 #container {
-  /* border: 1px solid black;
-  border-radius: 5px; */
+  /* border: 1px solid black; */
+  border-radius: 5px;
   background-color: pink;
 }
 
