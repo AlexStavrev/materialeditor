@@ -90,7 +90,15 @@ function addNewItem(item, isNew) {
       return 'Are you sure you want to leave? You are in the middle of something.';
     };
 
-    var editedItem = JSON.parse(this.value); //Change the head skin and the item name
+    //Change the head skin and the item name
+    try {
+      var editedItem = JSON.parse(this.value);
+    } catch (e) {
+      var error = e.toString().split("line")[1];
+      error = error.split("of")[0];
+      alert('Unexpected character at line' + error + 'of your item! Does not match JSON format!');
+      return;
+    }
     var headSides = this.parentElement.getElementsByClassName('customHead');
     if (editedItem != null) {
       var editedTitle = this.parentElement.parentElement.getElementsByTagName("p")[0];
@@ -146,7 +154,6 @@ function loadFromClipboard() {
     var container = document.getElementById("container");
     textarea.placeholder = "Paste your list here!";
 
-    textarea.classList.add("editBox");
     textarea.classList.add("XL-12");
     textarea.id = "clipboardBox";
     container.appendChild(textarea);
@@ -172,14 +179,21 @@ function loadFromClipboard() {
 
 //Save
 function saveFile() {
-  materials = [];
-  var items = document.getElementsByTagName('textarea');
+  var newList = [];
+  var items = document.getElementsByClassName('editBox');
   if (items.length <= 0) {
     alert("Empty list");
     return;
   }
   for (var i = 0; i < items.length; i++) {
-    materials[i] = JSON.parse(items[i].value);
+    try {
+      newList[i] = JSON.parse(items[i].value);
+    } catch (e) {
+      var error = e.toString().split("line")[1];
+      error = error.split("of")[0];
+      alert('Unexpected character at line' + error + 'of "' + materials[i].name + '", Item №' + (i+1) +  '. Does not match JSON format!');
+      return;
+    }
   }
   download(JSON.stringify(materials, null, "\t"), "materials.json", 'text/plain');
   window.onbeforeunload = null;
