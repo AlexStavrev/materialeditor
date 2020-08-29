@@ -49,7 +49,9 @@ function addNewItem(item, isNew) {
   //Element value setting
   title.appendChild(document.createTextNode(item.name + " ▼"));
   newEditBox.appendChild(document.createTextNode(JSON.stringify(item, null,'\t')));
-  skinsLink.appendChild(document.createTextNode("https://minecraft-heads.com/custom-heads"))
+  skinsLink.appendChild(document.createTextNode("https://minecraft-heads.com/custom-heads/search?searchword=" + item.name.replaceAll(" ", "+")))
+  skinsLink.href = "https://minecraft-heads.com/custom-heads/search?searchword=" + item.name.replaceAll(" ", "+");
+  skinsLink.setAttribute('target', '_blank');
   deleteButton.appendChild(document.createTextNode("  ❌  "));
 
   //Element pattern
@@ -147,9 +149,10 @@ function addNewItem(item, isNew) {
   if (isNew) {
     title.click();
     title.scrollIntoView();
+    skinsLink.innerHTML = "https://minecraft-heads.com/custom-heads";
+    skinsLink.href = "https://minecraft-heads.com/custom-heads";
   }
 }
-
 
 //From Clipboard
 function loadFromClipboard() {
